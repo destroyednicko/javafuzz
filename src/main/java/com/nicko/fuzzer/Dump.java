@@ -12,11 +12,15 @@ import java.util.Set;
 
 public class Dump {
 
+    /**
+     * Declares, and initializate the variables with modifiers.
+     */
     private final JFrame frame = new JFrame("Dumpar Header");
     private final JLabel header = new JLabel("", JLabel.CENTER);
     private final JLabel status = new JLabel("", JLabel.CENTER);
     private final JPanel panel = new JPanel();
 
+    // Create the Header copyier GUI.
     void dumpStart() {
         frame.setSize(600, 140);
         frame.setLayout(new GridLayout(3, 1));
@@ -63,7 +67,6 @@ public class Dump {
             URL u = new URL(input);
             URLConnection uc = u.openConnection();
             System.out.printf("\nURL inserida: %s", uc.getURL());
-
             Map<String, List<String>> headers = uc.getHeaderFields();
             Set<Map.Entry<String, List<String>>> entrySet = headers.entrySet();
             for (Map.Entry<String, List<String>> entry : entrySet) {
@@ -75,7 +78,6 @@ public class Dump {
                 }
                 System.out.println(" ");
             }
-
         } catch (MalformedURLException err) {
             System.err.printf("\n%s não é uma URL válida", input);
         } catch (IOException e) {

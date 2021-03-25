@@ -6,7 +6,9 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class DNS {
-
+    /**
+     * Declares, and initializate the variables with modifiers.
+     */
     private final JFrame frame = new JFrame("URL Querier");
     private final JLabel header = new JLabel("", JLabel.CENTER);
     private final JLabel status = new JLabel("", JLabel.CENTER);

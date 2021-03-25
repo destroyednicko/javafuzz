@@ -8,11 +8,15 @@ import java.nio.charset.StandardCharsets;
 
 public class Encoder {
 
+    /**
+     * Declares, and initializate the variables with modifiers.
+     */
     private final JFrame frame = new JFrame("Decoder e Encoder");
     private final JLabel header = new JLabel("", JLabel.CENTER);
     private final JLabel status = new JLabel("", JLabel.CENTER);
     private final JPanel panel = new JPanel();
 
+    // Initializate the GUI
     public void encoderStart() {
         frame.setSize(600, 140);
         frame.setLayout(new GridLayout(3, 1));
@@ -48,6 +52,7 @@ public class Encoder {
         dePanel.add(new JLabel(""));
         dePanel.add(new JLabel(""), BorderLayout.LINE_END);
 
+        // Add the deconde and encode buttons.
         dButton.addActionListener(e -> {
             String result = URLDecoder.decode(decode.getText(), StandardCharsets.UTF_8);
             System.out.println(result);
